@@ -1,0 +1,28 @@
+[workspace]
+members = ["contracts/*", "packages/*"]
+
+[workspace.package]
+version       = "0.0.0"
+authors       = ["Alessandro Baldassarre <alessandro.baldassarre.dev@gmail.com>"]
+edition       = "2021"
+license       = "UNLICENSED"
+repository    = "https://github.com/alessandro-baldassarre/cw-template"
+documentation = "https://github.com/alessandro-baldassarre/cw-template#readme"
+keywords      = ["blockchain", "cosmos", "cosmwasm"]
+rust-version  = "1.64.0"
+
+[workspace.dependencies]
+cosmwasm-schema = "1.2"
+cosmwasm-std    = "1.2"
+cw2             = "1.0.1"
+thiserror       = "1.0.38"
+
+[profile.release]
+codegen-units    = 1
+debug            = false
+debug-assertions = false
+incremental      = false
+lto              = true
+opt-level        = 3
+overflow-checks  = true
+rpath            = false
